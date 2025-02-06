@@ -33,7 +33,7 @@ struct ContentView: View {
                         case "/survey":
                             SurveyView(context: viewContext)
                         case "/setting":
-                            SettingView()
+                            SettingView(context: viewContext)
                         default:
                             Text("알 수 없는 경로: \(route.name)")
                         }

@@ -50,11 +50,11 @@ struct SurveyView: View {
                     Group {
                         if options.count == 2 {
                             TwoRadioButton(selectedIndex: $viewModel.buttonSelectedIndex, optionTitles: options,
-                                onSelection: viewModel.goToNextQuestion
+                                           onSelection: viewModel.goToNextQuestion
                             )
                         } else {
                             MultipleRadioButton(titles: options, selectedIndex: $viewModel.buttonSelectedIndex,
-                                onSelection: viewModel.goToNextQuestion
+                                                onSelection: viewModel.goToNextQuestion
                             )
                         }
                     }
@@ -88,5 +88,24 @@ struct SurveyView: View {
         // 네비게이션 바와 뒤로가기 버튼 숨기기
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
+        
+        .overlay(
+            Group {
+                if let message = viewModel.toastMessage {
+                    ToastView(message: message)
+                        .transition(.opacity)
+                }
+            },
+            alignment: .bottom
+        )
+        .onChange(of: viewModel.toastMessage) { newValue in
+            if newValue != nil {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    withAnimation {
+                        viewModel.toastMessage = nil
+                    }
+                }
+            }
+        }
     }
 }

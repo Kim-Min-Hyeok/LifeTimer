@@ -34,10 +34,12 @@ struct HomeView: View {
                 .frame(height: 50)
             }
             
+            Spacer()
+            
             if !viewModel.remainingTimeString.isEmpty {
                 // 남은 시간 텍스트
                 LifeTimerView(timeString: viewModel.remainingTimeString)
-                    .padding(.top, 179)
+                    .padding(.bottom, 100)
                 
                 // Progress Bar (CustomProgressView)
                 ProgressView(progress: viewModel.progress)
@@ -46,17 +48,15 @@ struct HomeView: View {
             } else {
                 Text("수명 데이터가 없습니다.")
                     .font(.title)
-                    .padding(.top, 179)
+                    .padding(.bottom, 100)
             }
-            
-            Spacer()
             
             Text("늦었다고 생각될 땐,\n진짜 늦은거다")
                 .font(.neoDunggeunmo(size: 18))
                 .foregroundColor(.black)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
-                .padding(.bottom, 207)
+                .padding(.bottom, 150)
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
