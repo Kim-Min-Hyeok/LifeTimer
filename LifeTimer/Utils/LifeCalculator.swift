@@ -31,10 +31,10 @@ func calculateLife(with answers: [SurveyAnswer?]) -> LifeCalculationResult? {
     let lifeOption: Int = {
         guard case let .button(index)? = answers[1] else { return 0 }
         switch index {
-        case 0: return 60
-        case 1: return 76
-        case 2: return 99
-        default: return 60
+        case 0: return 63
+        case 1: return 79
+        case 2: return 102
+        default: return 63
         }
     }()
     
