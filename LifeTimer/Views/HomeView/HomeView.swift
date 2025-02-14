@@ -60,7 +60,7 @@ struct HomeView: View {
             
             Spacer()
             
-            Link("기대 수명 계산 출처", destination: URL(string: "https://future-glass-b30.notion.site/19a93d5fc4ad8031bbfec8643d91ac9b?pvs=4")!)
+            Link("기대 수명 계산 출처", destination: URL(string: "https://github.com/Kim-Min-Hyeok/LifeTimer/blob/main/Citations%26References.md")!)
                 .font(.neoDunggeunmo(size: 10))
                 .foregroundColor(.blue1)
                 .multilineTextAlignment(.center)
