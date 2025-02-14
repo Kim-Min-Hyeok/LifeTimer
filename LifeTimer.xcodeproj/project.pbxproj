@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DB7052E92D5F5D5F0079B6B8 /* Citations&References.md in Resources */ = {isa = PBXBuildFile; fileRef = DB7052E82D5F5D410079B6B8 /* Citations&References.md */; };
+		DB7052EB2D5F5DDD0079B6B8 /* PrivacyPolicy.md in Resources */ = {isa = PBXBuildFile; fileRef = DB7052EA2D5F5DCF0079B6B8 /* PrivacyPolicy.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		DBD6561E2D520EF9004E771D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB7052E82D5F5D410079B6B8 /* Citations&References.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Citations&References.md"; sourceTree = "<group>"; };
+		DB7052EA2D5F5DCF0079B6B8 /* PrivacyPolicy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PrivacyPolicy.md; sourceTree = "<group>"; };
 		DBD656062D520EF7004E771D /* LifeTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD6561D2D520EF9004E771D /* LifeTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD656272D520EF9004E771D /* LifeTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +95,8 @@
 		DBD655FD2D520EF7004E771D = {
 			isa = PBXGroup;
 			children = (
+				DB7052EA2D5F5DCF0079B6B8 /* PrivacyPolicy.md */,
+				DB7052E82D5F5D410079B6B8 /* Citations&References.md */,
 				DBD656082D520EF7004E771D /* LifeTimer */,
 				DBD656202D520EF9004E771D /* LifeTimerTests */,
 				DBD6562A2D520EF9004E771D /* LifeTimerUITests */,
@@ -225,6 +234,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB7052E92D5F5D5F0079B6B8 /* Citations&References.md in Resources */,
+				DB7052EB2D5F5DDD0079B6B8 /* PrivacyPolicy.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

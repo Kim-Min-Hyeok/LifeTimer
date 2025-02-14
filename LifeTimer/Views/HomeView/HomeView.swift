@@ -57,6 +57,16 @@ struct HomeView: View {
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.bottom, 150)
+            
+            Spacer()
+            
+            Link("기대 수명 계산 출처", destination: URL(string: "https://future-glass-b30.notion.site/19a93d5fc4ad8031bbfec8643d91ac9b?pvs=4")!)
+                .font(.neoDunggeunmo(size: 10))
+                .foregroundColor(.blue1)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+            
+            Spacer()
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)

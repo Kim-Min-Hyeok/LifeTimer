@@ -98,7 +98,7 @@ struct SurveyView: View {
             },
             alignment: .bottom
         )
-        .onChange(of: viewModel.toastMessage) { newValue in
+        .onChange(of: viewModel.toastMessage) { oldValue, newValue in
             if newValue != nil {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     withAnimation {
