@@ -141,7 +141,7 @@ final class SurveyViewModel: ObservableObject {
         
         qs.append(SurveyQuestion(
             questionText: "하루에 담배를 얼마나 피우십니까?",
-            type: .buttons(options: ["두갑 이상", "한갑~두갑", "한갑~반감", "피우지 않음"])))
+            type: .buttons(options: ["두갑 이상", "한갑~두갑", "한갑~반갑", "피우지 않음"])))
         
         qs.append(SurveyQuestion(
             questionText: "키와 몸무게를 입력하세요",
