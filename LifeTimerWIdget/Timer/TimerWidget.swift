@@ -12,11 +12,11 @@ struct TimerWidget: Widget {
     let kind: String = "TimerWidget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: TimerProvider()) { _ in
-            TimerWidgetView()
+        StaticConfiguration(kind: kind, provider: TimerProvider()) { entry in
+            TimerWidgetView(entry: entry)
         }
         .supportedFamilies([.systemMedium])
         .configurationDisplayName("Life Timer - Timer Only")
-        .description("남은 수명을 타이머로 표시합니다.")
+        .description("남은 수명을 'YY년 mm개월 DD일' 형식으로 표시합니다.")
     }
 }

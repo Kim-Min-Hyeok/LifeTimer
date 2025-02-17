@@ -82,18 +82,17 @@
 		DBDE613E2D6204C100BD2225 /* Exceptions for "LifeTimerWIdget" folder in "LifeTimer" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Entries/LifeTimerEntry.swift,
-				ViewModels/ProgressWidgetViewModel.swift,
-				ViewModels/TimerWidgetViewModel.swift,
-				Views/ProgressWidgetView/ProgressWidgetView.swift,
-				Views/ProgressWidgetView/WidgetProgressView.swift,
-				Views/TimerWidgetView.swift,
+				LifeTimerEntry.swift,
+				Progress/ProgressWidgetView.swift,
+				Progress/ProgressWidgetView/WidgetProgressView.swift,
+				Timer/TimerWidgetView.swift,
 			);
 			target = DBD656052D520EF7004E771D /* LifeTimer */;
 		};
 		DBDE61542D6208F100BD2225 /* Exceptions for "LifeTimer" folder in "LifeTimerWIdgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Assets.xcassets,
 				DesignSystems/Colors/Color.swift,
 				DesignSystems/Fonts/Font.swift,
 				LifeTimer.xcdatamodeld,

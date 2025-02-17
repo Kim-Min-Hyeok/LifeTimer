@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WidgetKit
 
 class WidgetDataManager {
     static let shared = WidgetDataManager()
@@ -21,7 +22,7 @@ class WidgetDataManager {
         return userDefaults?.object(forKey: "deathDate") as? Date
     }
     
-    /// UserDefaults에서 남은 시간 가져오기
+    /// UserDefaults에서 남은 시간을 "YY년 mm개월 DD일" 형식으로 계산하여 반환
     func getRemainingTime() -> String {
         guard let deathDate = userDefaults?.object(forKey: "deathDate") as? Date else {
             print("🚨 UserDefaults에서 deathDate를 가져오지 못함")
@@ -29,16 +30,12 @@ class WidgetDataManager {
         }
         
         let now = Date()
-        let components = Calendar.current.dateComponents(
-            [.year, .month, .day, .hour, .minute, .second],
-            from: now,
-            to: deathDate
-        )
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: now, to: deathDate)
+        let years = components.year ?? 0
+        let months = components.month ?? 0
+        let days = components.day ?? 0
         
-        return """
-        \(components.year ?? 0)년 \(components.month ?? 0)개월 \(components.day ?? 0)일
-        \(String(format: "%02d", components.hour ?? 0)):\(String(format: "%02d", components.minute ?? 0)):\(String(format: "%02d", components.second ?? 0))
-        """
+        return "\(years)년 \(months)개월 \(days)일"
     }
     
     /// UserDefaults에서 진행률 가져오기
@@ -48,11 +45,10 @@ class WidgetDataManager {
     
     /// UserDefaults에 데이터 저장
     func saveUserData(birthDate: Date, deathDate: Date) {
+        userDefaults?.set(birthDate, forKey: "birthDate")
         userDefaults?.set(deathDate, forKey: "deathDate")
-        let total = deathDate.timeIntervalSince(birthDate)
-        let elapsed = Date().timeIntervalSince(birthDate)
-        let progress = min(max(elapsed / total, 0), 1)
-        userDefaults?.set(progress, forKey: "progress")
+        // (진행률 계산은 앱에서 별도로 업데이트하도록 할 수 있음)
+        WidgetCenter.shared.reloadAllTimelines()
+        print("✅ UserDefaults에 데이터 저장 완료: birthDate=\(birthDate), deathDate=\(deathDate)")
     }
 }
-

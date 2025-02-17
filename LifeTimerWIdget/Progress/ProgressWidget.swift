@@ -12,8 +12,8 @@ struct ProgressWidget: Widget {
     let kind: String = "ProgressWidget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: ProgressProvider()) { _ in
-            ProgressWidgetView()
+        StaticConfiguration(kind: kind, provider: ProgressProvider()) { entry in
+            ProgressWidgetView(entry: entry)
         }
         .supportedFamilies([.systemSmall, .systemMedium])
         .configurationDisplayName("Life Timer - Progress Only")
