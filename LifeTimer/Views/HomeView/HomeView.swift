@@ -9,15 +9,9 @@ import SwiftUI
 import CoreData
 
 struct HomeView: View {
-    let context: NSManagedObjectContext
     @EnvironmentObject var router: NavigationRouter
-    @StateObject private var viewModel: HomeViewModel
-    
-    init(context: NSManagedObjectContext) {
-        self.context = context
-        _viewModel = StateObject(wrappedValue: HomeViewModel(context: context))
-    }
-    
+    @StateObject private var viewModel = HomeViewModel()
+
     var body: some View {
         VStack {
             // 상단 설정 버튼

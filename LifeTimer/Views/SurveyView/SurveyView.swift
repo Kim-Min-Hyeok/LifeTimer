@@ -9,7 +9,6 @@ import SwiftUI
 import CoreData
 
 struct SurveyView: View {
-    let context: NSManagedObjectContext
     
     @EnvironmentObject var router: NavigationRouter
     @StateObject private var viewModel = SurveyViewModel()
@@ -73,7 +72,7 @@ struct SurveyView: View {
                 // 하단 버튼: 마지막 질문이면 "제출", 아니면 "다음"
                 if viewModel.currentQuestionIndex == viewModel.questions.count - 1 {
                     OctagonButton(title: "내 수명 계산하기") {
-                        if(viewModel.submitSurvey(context: context)) {
+                        if(viewModel.submitSurvey()) {
                             router.offAll("/")
                         }
                     }

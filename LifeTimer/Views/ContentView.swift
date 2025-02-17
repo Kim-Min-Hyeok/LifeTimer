@@ -22,19 +22,19 @@ struct ContentView: View {
         ZStack {
             NavigationStack(path: $router.path) {
                 // initial Root: HomeView
-                HomeView(context: viewContext)
+                HomeView()
                     .navigationDestination(for: Route.self) { route in
                         switch route.name {
                         case "/":
-                            HomeView(context: viewContext)
+                            HomeView()
                         case "/splash":
                             SplashView()
                         case "/surveyIntro":
                             SurveyIntroView()
                         case "/survey":
-                            SurveyView(context: viewContext)
+                            SurveyView()
                         case "/setting":
-                            SettingView(context: viewContext)
+                            SettingView()
                         case "/source":  
                                 SourceView()
                         default:
@@ -70,15 +70,14 @@ struct ContentView: View {
             }
         }
         .onAppear() {
-            // 앱 실행 후 2초 뒤에 SplashView 제거 (fade-out)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 withAnimation(.easeOut(duration: 0.5)) {
                     showSplash = false
                 }
             }
-            
-            let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
-            if let count = try? viewContext.count(for: fetchRequest), count == 0 {
+
+            let user = UserDataManager.shared.fetchUser()
+            if user == nil {
                 router.offAll("/surveyIntro")
             }
         }

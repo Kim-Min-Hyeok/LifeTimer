@@ -141,7 +141,7 @@ final class SurveyViewModel: ObservableObject {
         
         qs.append(SurveyQuestion(
             questionText: "하루에 담배를 얼마나 피우십니까?",
-            type: .buttons(options: ["두갑 이상", "한갑~두갑", "한갑~반감", "피우지 않음"])))
+            type: .buttons(options: ["두갑 이상", "한갑~두갑", "한갑~반갑", "피우지 않음"])))
         
         qs.append(SurveyQuestion(
             questionText: "키와 몸무게를 입력하세요",
@@ -239,7 +239,7 @@ final class SurveyViewModel: ObservableObject {
     }
     
     /// 설문 제출 처리 (실제 저장/전송 로직 추가)
-    func submitSurvey(context: NSManagedObjectContext) -> Bool {
+    func submitSurvey() -> Bool {
         saveCurrentAnswer() // 마지막 질문 응답 저장
         
         // (응답 로그 출력)
@@ -259,28 +259,17 @@ final class SurveyViewModel: ObservableObject {
         // Q1에서 입력한 나이 값을 사용하여 현재 나이 계산
         guard case let .intInput(ageStr)? = answers[0],
               let currentAge = Int(ageStr) else {
-            print("나이 입력 오류")
+            print("🚨 나이 입력 오류")
             return false
         }
         
         // 출생일: 오늘 날짜에서 currentAge년 빼기
         let birthDate = Calendar.current.date(byAdding: .year, value: -currentAge, to: Date()) ?? Date()
         // 예상 사망일: 오늘 날짜에서 (기대수명 - 현재 나이)년 더하기
-        let remainingYears = result.lifeExpectancy - currentAge
+        let remainingYears = calculateLife(with: answers)?.lifeExpectancy ?? 80 - currentAge
         let deathDate = Calendar.current.date(byAdding: .year, value: remainingYears, to: Date()) ?? Date()
         
-        // Core Data에 User 엔티티 저장
-        let newUser = User(context: context)
-        newUser.birth = birthDate
-        newUser.death = deathDate
-        
-        do {
-            try context.save()
-            print("User 저장 성공: 예상 사망일 \(deathDate)")
-            return true
-        } catch {
-            print("🚨 User 저장 실패: \(error)")
-            return false
-        }
+        // ✅ UserDataManager를 사용하여 Core Data 저장
+        return UserDataManager.shared.saveUser(birthDate: birthDate, deathDate: deathDate)
     }
 }
