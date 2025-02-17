@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		DB7052E92D5F5D5F0079B6B8 /* Citations&References.md in Resources */ = {isa = PBXBuildFile; fileRef = DB7052E82D5F5D410079B6B8 /* Citations&References.md */; };
 		DB7052EB2D5F5DDD0079B6B8 /* PrivacyPolicy.md in Resources */ = {isa = PBXBuildFile; fileRef = DB7052EA2D5F5DCF0079B6B8 /* PrivacyPolicy.md */; };
+		DBDE611C2D6200B200BD2225 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBDE611B2D6200B200BD2225 /* WidgetKit.framework */; };
+		DBDE611E2D6200B200BD2225 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBDE611D2D6200B200BD2225 /* SwiftUI.framework */; };
+		DBDE612F2D6200B300BD2225 /* LifeTimerWIdgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DBDE61192D6200B200BD2225 /* LifeTimerWIdgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,7 +29,28 @@
 			remoteGlobalIDString = DBD656052D520EF7004E771D;
 			remoteInfo = LifeTimer;
 		};
+		DBDE612D2D6200B300BD2225 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBD655FE2D520EF7004E771D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBDE61182D6200B200BD2225;
+			remoteInfo = LifeTimerWIdgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DBDE61302D6200B300BD2225 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DBDE612F2D6200B300BD2225 /* LifeTimerWIdgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DB7052E82D5F5D410079B6B8 /* Citations&References.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Citations&References.md"; sourceTree = "<group>"; };
@@ -34,6 +58,10 @@
 		DBD656062D520EF7004E771D /* LifeTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD6561D2D520EF9004E771D /* LifeTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD656272D520EF9004E771D /* LifeTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBDE61192D6200B200BD2225 /* LifeTimerWIdgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LifeTimerWIdgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBDE611B2D6200B200BD2225 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		DBDE611D2D6200B200BD2225 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		DBDE61452D62062100BD2225 /* LifeTimerWIdgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LifeTimerWIdgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -44,6 +72,38 @@
 			);
 			target = DBD656052D520EF7004E771D /* LifeTimer */;
 		};
+		DBDE61342D6200B300BD2225 /* Exceptions for "LifeTimerWIdget" folder in "LifeTimerWIdgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = DBDE61182D6200B200BD2225 /* LifeTimerWIdgetExtension */;
+		};
+		DBDE613E2D6204C100BD2225 /* Exceptions for "LifeTimerWIdget" folder in "LifeTimer" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Entries/LifeTimerEntry.swift,
+				ViewModels/ProgressWidgetViewModel.swift,
+				ViewModels/TimerWidgetViewModel.swift,
+				Views/ProgressWidgetView/ProgressWidgetView.swift,
+				Views/ProgressWidgetView/WidgetProgressView.swift,
+				Views/TimerWidgetView.swift,
+			);
+			target = DBD656052D520EF7004E771D /* LifeTimer */;
+		};
+		DBDE61542D6208F100BD2225 /* Exceptions for "LifeTimer" folder in "LifeTimerWIdgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DesignSystems/Colors/Color.swift,
+				DesignSystems/Fonts/Font.swift,
+				LifeTimer.xcdatamodeld,
+				Managers/CoreDataManager.swift,
+				Managers/UserDataManager.swift,
+				Managers/WidgetDataManager.swift,
+				"Resources/NeoDunggeunmoPro/NeoDunggeunmoPro-Regular.ttf",
+			);
+			target = DBDE61182D6200B200BD2225 /* LifeTimerWIdgetExtension */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -51,6 +111,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				DBD6562F2D520EF9004E771D /* Exceptions for "LifeTimer" folder in "LifeTimer" target */,
+				DBDE61542D6208F100BD2225 /* Exceptions for "LifeTimer" folder in "LifeTimerWIdgetExtension" target */,
 			);
 			path = LifeTimer;
 			sourceTree = "<group>";
@@ -63,6 +124,15 @@
 		DBD6562A2D520EF9004E771D /* LifeTimerUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = LifeTimerUITests;
+			sourceTree = "<group>";
+		};
+		DBDE611F2D6200B200BD2225 /* LifeTimerWIdget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DBDE613E2D6204C100BD2225 /* Exceptions for "LifeTimerWIdget" folder in "LifeTimer" target */,
+				DBDE61342D6200B300BD2225 /* Exceptions for "LifeTimerWIdget" folder in "LifeTimerWIdgetExtension" target */,
+			);
+			path = LifeTimerWIdget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -89,17 +159,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBDE61162D6200B200BD2225 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBDE611E2D6200B200BD2225 /* SwiftUI.framework in Frameworks */,
+				DBDE611C2D6200B200BD2225 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		DBD655FD2D520EF7004E771D = {
 			isa = PBXGroup;
 			children = (
+				DBDE61452D62062100BD2225 /* LifeTimerWIdgetExtension.entitlements */,
 				DB7052EA2D5F5DCF0079B6B8 /* PrivacyPolicy.md */,
 				DB7052E82D5F5D410079B6B8 /* Citations&References.md */,
 				DBD656082D520EF7004E771D /* LifeTimer */,
 				DBD656202D520EF9004E771D /* LifeTimerTests */,
 				DBD6562A2D520EF9004E771D /* LifeTimerUITests */,
+				DBDE611F2D6200B200BD2225 /* LifeTimerWIdget */,
+				DBDE611A2D6200B200BD2225 /* Frameworks */,
 				DBD656072D520EF7004E771D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,8 +192,18 @@
 				DBD656062D520EF7004E771D /* LifeTimer.app */,
 				DBD6561D2D520EF9004E771D /* LifeTimerTests.xctest */,
 				DBD656272D520EF9004E771D /* LifeTimerUITests.xctest */,
+				DBDE61192D6200B200BD2225 /* LifeTimerWIdgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DBDE611A2D6200B200BD2225 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE611B2D6200B200BD2225 /* WidgetKit.framework */,
+				DBDE611D2D6200B200BD2225 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,10 +216,12 @@
 				DBD656022D520EF7004E771D /* Sources */,
 				DBD656032D520EF7004E771D /* Frameworks */,
 				DBD656042D520EF7004E771D /* Resources */,
+				DBDE61302D6200B300BD2225 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DBDE612E2D6200B300BD2225 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				DBD656082D520EF7004E771D /* LifeTimer */,
@@ -185,6 +279,28 @@
 			productReference = DBD656272D520EF9004E771D /* LifeTimerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		DBDE61182D6200B200BD2225 /* LifeTimerWIdgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBDE61332D6200B300BD2225 /* Build configuration list for PBXNativeTarget "LifeTimerWIdgetExtension" */;
+			buildPhases = (
+				DBDE61152D6200B200BD2225 /* Sources */,
+				DBDE61162D6200B200BD2225 /* Frameworks */,
+				DBDE61172D6200B200BD2225 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				DBDE611F2D6200B200BD2225 /* LifeTimerWIdget */,
+			);
+			name = LifeTimerWIdgetExtension;
+			packageProductDependencies = (
+			);
+			productName = LifeTimerWIdgetExtension;
+			productReference = DBDE61192D6200B200BD2225 /* LifeTimerWIdgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -206,6 +322,9 @@
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = DBD656052D520EF7004E771D;
 					};
+					DBDE61182D6200B200BD2225 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 				};
 			};
 			buildConfigurationList = DBD656012D520EF7004E771D /* Build configuration list for PBXProject "LifeTimer" */;
@@ -225,6 +344,7 @@
 				DBD656052D520EF7004E771D /* LifeTimer */,
 				DBD6561C2D520EF9004E771D /* LifeTimerTests */,
 				DBD656262D520EF9004E771D /* LifeTimerUITests */,
+				DBDE61182D6200B200BD2225 /* LifeTimerWIdgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -247,6 +367,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DBD656252D520EF9004E771D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBDE61172D6200B200BD2225 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -277,6 +404,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBDE61152D6200B200BD2225 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -290,6 +424,11 @@
 			target = DBD656052D520EF7004E771D /* LifeTimer */;
 			targetProxy = DBD656282D520EF9004E771D /* PBXContainerItemProxy */;
 		};
+		DBDE612E2D6200B300BD2225 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBDE61182D6200B200BD2225 /* LifeTimerWIdgetExtension */;
+			targetProxy = DBDE612D2D6200B300BD2225 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -299,6 +438,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LifeTimer/LifeTimer.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LifeTimer/Preview Content\"";
@@ -317,13 +457,14 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alsgur.LifeTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -340,6 +481,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LifeTimer/LifeTimer.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LifeTimer/Preview Content\"";
@@ -358,13 +500,14 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alsgur.LifeTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -579,6 +722,67 @@
 			};
 			name = Release;
 		};
+		DBDE61312D6200B300BD2225 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = LifeTimerWIdgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GXC72G385T;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LifeTimerWIdget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LifeTimerWIdget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alsgur.LifeTimer.LifeTimerWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DBDE61322D6200B300BD2225 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = LifeTimerWIdgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GXC72G385T;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LifeTimerWIdget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LifeTimerWIdget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alsgur.LifeTimer.LifeTimerWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -614,6 +818,15 @@
 			buildConfigurations = (
 				DBD656392D520EF9004E771D /* Debug */,
 				DBD6563A2D520EF9004E771D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBDE61332D6200B300BD2225 /* Build configuration list for PBXNativeTarget "LifeTimerWIdgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBDE61312D6200B300BD2225 /* Debug */,
+				DBDE61322D6200B300BD2225 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

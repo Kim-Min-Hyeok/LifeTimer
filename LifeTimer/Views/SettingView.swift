@@ -9,15 +9,9 @@ import SwiftUI
 import CoreData
 
 struct SettingView: View {
-    let context: NSManagedObjectContext
     @EnvironmentObject var router: NavigationRouter
-    @StateObject private var viewModel: SettingViewModel
+    @StateObject private var viewModel = SettingViewModel()
     @State private var showingResetAlert = false
-    
-    init(context: NSManagedObjectContext) {
-        self.context = context
-        _viewModel = StateObject(wrappedValue: SettingViewModel(context: context))
-    }
     
     var body: some View {
         ZStack() {
